@@ -1,2 +1,2 @@
 # HIER-Embed
-Code Repository for Phylo Diffusion
+Code Repository for HIER-Embed
