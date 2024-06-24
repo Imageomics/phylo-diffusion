@@ -28,6 +28,7 @@ dependencies:
     - einops==0.3.0
     - seaborn==0.9.0
     - open_clip_torch
+    - scikit-learn
     - -e git+https://github.com/CompVis/taming-transformers.git@master#egg=taming-transformers
     - -e git+https://github.com/openai/CLIP.git@main#egg=clip
     - -e .
