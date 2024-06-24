@@ -67,6 +67,40 @@ class HeirClassEmbedder(nn.Module):
         embedding = torch.cat(embedding_list, dim=-1)
         return embedding
     
+class HeirClassEmbedderMultiLevel(nn.Module):
+    def __init__(self, embed_dim, n_classes=[3, 6, 9, 38], key='class', device='cuda'):
+        super().__init__()
+        assert embed_dim % len(n_classes) == 0
+        self.key = key
+        self.device = device
+        self.n_classes = n_classes
+        self.embed_heir_dim = embed_dim//len(n_classes)
+        self.embedding_layers = []
+        self.embedding_layers = nn.ModuleList()
+        for i in list(n_classes):
+            embedding = nn.Embedding(i, self.embed_heir_dim)
+            self.embedding_layers.append(embedding.to(self.device))
+        
+    def forward(self, batch, key=None):
+        if key is None:
+            key = self.key
+        # this is for use in crossattn
+        batch_size = len(batch[key][0])
+        hier_classes = batch[key]
+
+        hier_classes = [[int(num) for num in item.split(', ')] for item in hier_classes[0]]
+        transformed_list = [list(pair) for pair in zip(*hier_classes)]
+        tensor_list = [torch.tensor(sublist).to(self.device) for sublist in transformed_list]
+        tensor_reshaped = [torch.reshape(sublist, (batch_size, 1)) for sublist in tensor_list]
+
+        embedding_list = []
+        for i in range(len(self.n_classes)):
+            embedding_list.append(self.embedding_layers[i](tensor_reshaped[i]))
+        
+        embedding = torch.cat(embedding_list, dim=-1)
+
+        return embedding
+    
 class TransformerEmbedder(AbstractEncoder):
     """Some transformer encoder layers"""
     def __init__(self, n_embed, n_layer, vocab_size, max_seq_len=77, device="cuda"):
