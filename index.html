@@ -108,12 +108,28 @@
 
     <h2 class="banded" id="evaluation">Experiments</h2>
     <p>
+      We evaluate HIER-Embed and show that it achieves high-fidelity at par with the text-to-image and class-conditional diffusion models.
+
+      
       We evaluate BioCLIP and three baselines (<a href="https://github.com/openai/CLIP">CLIP</a>, <a href="https://github.com/mlfoundations/open_clip">OpenCLIP</a>, and an iNat-only model that
       uses the same procedure as BioCLIP but trained only on <a href="https://huggingface.co/imageomics/bioclip-vit-b-16-inat-only">iNat21</a>) on a diverse set of biology-related
       classification tasks.
       We do zero-shot classification with all models and report accuracy on the validation sets.
       Bold indicates the best performance for each task.
     </p>
+    <figure>
+      <!-- <a href="files/intrinsic.pdf">
+        <img srcset="" src="images/intrinsic_small.png" alt="" loading="lazy">
+      </a> -->
+      <img srcset="" src="images/level3-lepomis.pdf" alt="" loading="lazy">
+      <figcaption>
+        Figure 1: A schematic representation of our proposed approach to encode the information of a species and its position in 
+        the phylogenetic tree in the form of a HIERarchical Embedding (HIER-Embed) comprising of four encoding segments 
+        (one for each level of phylogeny), which when used to condition a latent diffusion model generates synthetic images of 
+        the species. By structuring the embedding space of species with phylogenetic knowledge, HIER-Embed enables us to 
+        visualize changes in evolutionary traits of generated images (circled pink) after perturbing certain levels of the embedding
+      </figcaption>
+    </figure>
     <p>
       <b>BioCLIP outperforms both general-domain baselines <i>and</i> our new iNat-only ViT model.</b>
     </p>
@@ -202,7 +218,7 @@
       </tbody>
     </table>
 
-    <h3>Evaluation Examples</h3>
+    <!-- <h3>Evaluation Examples</h3>
     <div class="figure-container">
       <figure>
         <a href="images/bioclip_correct_fungi.png">
@@ -253,7 +269,7 @@
           CLIP mislabels this <a href="https://eol.org/pages/898634"><i>Strombidium concicum</i></a> as a ciliate mix, while BioCLIP correctly labels it.
         </figcaption>
       </figure>
-    </div>
+    </div> -->
 
     <h2 id="intrinsic" class="banded">Intrinsic Evaluation</h2>
     <p>
@@ -277,48 +293,32 @@
       </figcaption>
     </figure>
 
-    <h2 class="banded" id="dataset">Dataset</h2>
+    <!-- <h2 class="banded" id="dataset">Dataset</h2>
     <p>
       TreeOfLife-10M is the largest and most diverse available dataset of biology images.
       We combine images from three sources, iNaturalist, BIOSCAN-1M, and Encyclopedia of Life (<a href="https://eol.org">EOL</a>, accessed 29 July 2023), to create a dataset of
       10M images, spanning 450K+ species.
-      <!-- We provide a train/val split, and will release the dataset under a CC-BY-NC license. -->
       We train BioCLIP on TreeOfLife-10M and release the weights for public use.
-    </p>
+    </p> -->
 
-    <h2>Reference</h2>
+    <!-- <h2>Reference</h2>
     <p>Please cite our paper if you use our code, data, model or results.</p>
     <pre class="reference">@inproceedings{stevens2024bioclip,
-      title = {{B}io{CLIP}: A Vision Foundation Model for the Tree of Life}, 
-      author = {Samuel Stevens and Jiaman Wu and Matthew J Thompson and Elizabeth G Campolongo and Chan Hee Song and David Edward Carlyn and Li Dong and Wasila M Dahdul and Charles Stewart and Tanya Berger-Wolf and Wei-Lun Chao and Yu Su},
-      booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+      title = {Hier}, 
+      author = {},
+      booktitle={},
       year = {2024}
     }</pre>
-    <p>Also consider citing OpenCLIP, iNat21 and BIOSCAN-1M:</p>
-    <pre class="reference">@software{ilharco_gabriel_2021_5143773,
-  author={Ilharco, Gabriel and Wortsman, Mitchell and Wightman, Ross and Gordon, Cade and Carlini, Nicholas and Taori, Rohan and Dave, Achal and Shankar, Vaishaal and Namkoong, Hongseok and Miller, John and Hajishirzi, Hannaneh and Farhadi, Ali and Schmidt, Ludwig},
-  title={OpenCLIP},
-  year={2021},
-  doi={10.5281/zenodo.5143773},
-}</pre>
-    <pre class="reference">@misc{inat2021,
-  author={Van Horn, Grant and Mac Aodha, Oisin},
-  title={iNat Challenge 2021 - FGVC8},
-  publisher={Kaggle},
-  year={2021},
-  url={https://kaggle.com/competitions/inaturalist-2021}
-}</pre>
-    <pre class="reference">@inproceedings{gharaee2023step,
-  author={Gharaee, Z. and Gong, Z. and Pellegrino, N. and Zarubiieva, I. and Haurum, J. B. and Lowe, S. C. and McKeown, J. T. A. and Ho, C. Y. and McLeod, J. and Wei, Y. C. and Agda, J. and Ratnasingham, S. and Steinke, D. and Chang, A. X. and Taylor, G. W. and Fieguth, P.},
-  title={A Step Towards Worldwide Biodiversity Assessment: The {BIOSCAN-1M} Insect Dataset},
-  booktitle={Advances in Neural Information Processing Systems ({NeurIPS}) Datasets \& Benchmarks Track},
-  year={2023},
-}</pre>
+    <p>Also consider citing LDM:</p>
+    <pre class="reference">@inproceedings{rombach2022high,
+      title={High-resolution image synthesis with latent diffusion models},
+      author={Rombach, Robin and Blattmann, Andreas and Lorenz, Dominik and Esser, Patrick and Ommer, Bj{\"o}rn},
+      booktitle={Proceedings of the IEEE/CVF conference on computer vision and pattern recognition},
+      pages={10684--10695},
+      year={2022}
+    }</pre> -->
 
     <h2 class="banded">Acknowledgements</h2>
-    <p>
-      The authors would like to thank Josef Uyeda, Jim Balhoff, Dan Rubenstein, Hank Bart, Hilmar Lapp, Sara Beery, and colleagues from the Imageomics Institute and the OSU NLP group for their valuable feedback. We also thank the BIOSCAN-1M team and the iNaturalist team for making their data available and easy to use, and Jennifer Hammack at EOL for her invaluable help in accessing EOL’s images.
-    </p>
     <p>
       This work was supported by the <a href="https://imageomics.org">Imageomics Institute</a>, which is funded by the US National Science Foundation's Harnessing the Data Revolution (HDR) program under <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2118240">Award #2118240</a> (Imageomics: A New Frontier of Biological Information Powered by Knowledge-Guided Machine Learning). Any opinions, findings and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.
     </p>
