@@ -109,34 +109,36 @@
     <h2 class="banded" id="evaluation">Experiments</h2>
     <p>
       We evaluate HIER-Embed and show that it achieves high-fidelity at par with the text-to-image and class-conditional diffusion models.
-
-      
-      We evaluate BioCLIP and three baselines (<a href="https://github.com/openai/CLIP">CLIP</a>, <a href="https://github.com/mlfoundations/open_clip">OpenCLIP</a>, and an iNat-only model that
-      uses the same procedure as BioCLIP but trained only on <a href="https://huggingface.co/imageomics/bioclip-vit-b-16-inat-only">iNat21</a>) on a diverse set of biology-related
-      classification tasks.
-      We do zero-shot classification with all models and report accuracy on the validation sets.
-      Bold indicates the best performance for each task.
+      TODO: Insert table
     </p>
+
+    <h3>Trait Masking</h3>
+
     <figure>
-      <!-- <a href="files/intrinsic.pdf">
-        <img srcset="" src="images/intrinsic_small.png" alt="" loading="lazy">
-      </a> -->
-      <img srcset="" src="images/level3-lepomis.pdf" alt="" loading="lazy">
+
+      <img srcset="" src="images/level3-lepomis.jpg" alt="" loading="lazy">
       <figcaption>
-        Figure 1: A schematic representation of our proposed approach to encode the information of a species and its position in 
-        the phylogenetic tree in the form of a HIERarchical Embedding (HIER-Embed) comprising of four encoding segments 
-        (one for each level of phylogeny), which when used to condition a latent diffusion model generates synthetic images of 
-        the species. By structuring the embedding space of species with phylogenetic knowledge, HIER-Embed enables us to 
-        visualize changes in evolutionary traits of generated images (circled pink) after perturbing certain levels of the embedding
+        Figure 2: Probability activations for <i>Lepomis</i> species at level 3 for Trait Masking. 
+        The species highlighted in green represent the species belonging to that subtree at the given level
       </figcaption>
     </figure>
-    <p>
-      <b>BioCLIP outperforms both general-domain baselines <i>and</i> our new iNat-only ViT model.</b>
-    </p>
-    <p>
-      Check out the <a href="https://arxiv.org/abs/2311.18803">paper</a> for one-shot and five-shot results.
-    </p>
-    <p><i>Scroll to see all results.</i></p>
+    
+    <h3>Trait Swapping</h3>
+
+    <figure>
+
+      <img srcset="" src="images/trait_swapping1.jpg" alt="" loading="lazy">
+      <figcaption>
+        Figure 3: Visualization of changes in traits after swapping information at Level 2 (Node A) 
+        for <i>Noturus Exilis</i> (left) with its sibling subtree at Node B(right) to generate perturbed species (center). 
+        Traits shared with the source species are outlined in green, whereas those shared with the sibling subtree 
+        at Node B are outlined in pink.
+      </figcaption>
+    </figure>
+    
+
+
+    <!-- <p><i>Scroll to see all results.</i></p>
     <table cellpadding="0" cellspacing="0">
       <thead>
         <tr>
@@ -216,63 +218,12 @@
           <td>31.6</td>
         </tr>
       </tbody>
-    </table>
+    </table> -->
 
-    <!-- <h3>Evaluation Examples</h3>
-    <div class="figure-container">
-      <figure>
-        <a href="images/bioclip_correct_fungi.png">
-          <img srcset="" src="images/bioclip_correct_fungi.png" alt="" loading="lazy">
-        </a>
-        <figcaption>
-          BioCLIP correctly labels this <a href="https://en.wikipedia.org/wiki/Clitocybe_fragrans"><i>Clitocybe fragrans</i></a> from the Fungi task.
-        </figcaption>
-      </figure>
-      <figure>
-        <a href="images/bioclip_correct_med-leaf.png">
-          <img srcset="" src="images/bioclip_correct_med-leaf.png" alt="" loading="lazy">
-        </a>
-        <figcaption>
-          BioCLIP correctly labels this Jasmine leaf (<a href="https://en.wikipedia.org/wiki/Jasmine"><i>Jasminum</i></a>) from the Medicinal Leaf task.
-        </figcaption>
-      </figure>
-      <figure>
-        <a href="images/bioclip_correct_plankton.png">
-          <img srcset="" src="images/bioclip_correct_plankton.png" alt="" loading="lazy">
-        </a>
-        <figcaption>
-          BioCLIP correctly labels this <a href="https://microbewiki.kenyon.edu/index.php/Rhizosolenia"><i>Rhizosolenia</i></a> from the Plankton task.
-          BioCLIP performs well on a variety of image sources, like this microscope image.
-        </figcaption>
-      </figure>
-      <figure>
-        <a href="images/openai_wrong_bioclip_right_openai_fungi.png">
-          <img srcset="" src="images/openai_wrong_bioclip_right_openai_fungi.png" alt="" loading="lazy">
-        </a>
-        <figcaption>
-          CLIP mislabels this <a href="https://en.wikipedia.org/wiki/Russula_ochroleuca"><i>Russula ochroleuca</i></a> as "the prince" (<a href="https://en.wikipedia.org/wiki/Agaricus_augustus"><i>Agaricus augustus</i></a>), which isn't even in the same family as Russula ochroleuca, while BioCLIP correctly labels it.
-        </figcaption>
-      </figure>
-      <figure>
-        <a href="images/openai_wrong_bioclip_right_openai_med-leaf.png">
-          <img srcset="" src="images/openai_wrong_bioclip_right_openai_med-leaf.png" alt="" loading="lazy">
-        </a>
-        <figcaption>
-          CLIP mislabels this Roxburg fig (<a href="https://en.wikipedia.org/wiki/Ficus_auriculata"><i>Ficus auriculata</i></a>) as a Peepal tree (<a href="https://en.wikipedia.org/wiki/Ficus_religiosa"><i>Ficus Religiosa</i></a>), while BioCLIP correctly labels it.
-        </figcaption>
-      </figure>
-      <figure>
-        <a href="images/openai_wrong_bioclip_right_openai_plankton.png">
-          <img srcset="" src="images/openai_wrong_bioclip_right_openai_plankton.png" alt="" loading="lazy">
-        </a>
-        <figcaption>
-          CLIP mislabels this <a href="https://eol.org/pages/898634"><i>Strombidium concicum</i></a> as a ciliate mix, while BioCLIP correctly labels it.
-        </figcaption>
-      </figure>
-    </div> -->
 
-    <h2 id="intrinsic" class="banded">Intrinsic Evaluation</h2>
-    <p>
+
+    <h2 id="comparision" class="banded">Comparision to PhyloNN</h2>
+    <!-- <p>
       Why does BioCLIP work so well?
       We conduct an intrinsic evaluation to understand the representations learned by BioCLIP.
       We visualize BioCLIP and CLIP's representations for the 100K unseen images in the iNat21 validation set, using T-SNE to plot them in two-dimensions, coloring the points based on their class.
@@ -291,7 +242,7 @@
         We show that <b>(B)</b>ioCLIP's representations are more fine-grained and contain a richer clustering structure than <b>(O)</b>penAI's CLIP.
         Click on the image to see the full resolution PDF, or check out our <a href="https://arxiv.org/abs/2311.18803">paper</a> for more details.
       </figcaption>
-    </figure>
+    </figure> -->
 
     <!-- <h2 class="banded" id="dataset">Dataset</h2>
     <p>
