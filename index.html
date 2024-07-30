@@ -27,19 +27,19 @@
     <h1>Hierarchical Conditioning of Diffusion Models Using Tree-of-Life for Studying Species Evolution</h1>
     <p class="centered">
       <sup>1</sup><a href="https://mridulk97.github.io/">Mridul Khurana</a>,
-      <sup>1</sup>Arka Daw,
-      <sup>1</sup>M. Maruf,
-      <sup>1</sup>Josef Uyeda,
-      <sup>2</sup>Wasila Dahdul,
-      <sup>1</sup>Caleb Charpentier,
-      <sup>3</sup>Yasin Bakış,
-      <sup>3</sup>Henry L. Bart Jr.,
-      <sup>4</sup>Paula Mabee,
-      <sup>5</sup>Hilmar Lapp,
-      <sup>6</sup>James Balhoff,
-      <sup>7</sup>Wei-Lun Chao,
-      <sup>8</sup>Charles Stewart,
-      <sup>7</sup>Tanya Berger-Wolf,
+      <sup>1</sup><a href="https://scholar.google.com/citations?user=pz2Nm8AAAAAJ&hl=en">Arka Daw</a>,
+      <sup>1</sup><a href="https://people.cs.vt.edu/marufm/">M. Maruf</a>,
+      <sup>1</sup><a href="https://www.uyedalab.com/">Josef Uyeda</a>,
+      <sup>2</sup><a href="https://www.faculty.uci.edu/profile/?facultyId=6769">Wasila Dahdul</a>,
+      <sup>1</sup><a href="https://scholar.google.com/citations?user=LyaJ880AAAAJ&hl=en">Caleb Charpentier</a>,
+      <sup>3</sup><a href="https://scholar.google.com/citations?user=bRO-9m8AAAAJ&hl=en">Yasin Bakış</a>,
+      <sup>3</sup><a href="https://scholar.google.com/citations?user=K4typXsAAAAJ&hl=en">Henry L. Bart Jr.</a>,
+      <sup>4</sup><a href="https://scholar.google.com/citations?user=ZKnlvcoAAAAJ&hl=en">Paula Mabee</a>,
+      <sup>5</sup><a href="https://scholars.duke.edu/person/Hilmar.Lapp">Hilmar Lapp</a>,
+      <sup>6</sup><a href="https://renci.org/staff/james-balhoff/">James Balhoff</a>,
+      <sup>7</sup><a href="https://sites.google.com/view/wei-lun-harry-chao">Wei-Lun (Harry) Chao</a>,
+      <sup>8</sup><a href="https://www.cs.rpi.edu/~stewart/">Charles Stewart</a>,
+      <sup>7</sup><a href="https://cse.osu.edu/people/berger-wolf.1">Tanya Berger-Wolf</a>,
       <sup>1</sup><a href="https://people.cs.vt.edu/karpatne/">Anuj Karpatne</a>
     </p>
     <p class="centered">
@@ -64,7 +64,7 @@
       <!-- <a class="pill-button" href="https://huggingface.co/datasets/imageomics/TreeOfLife-10M">
         <img src="images/icons/huggingface.svg" /> Data
       </a> -->
-      <a class="pill-button" href="https://github.com/mridulk97/hier-embed">
+      <a class="pill-button" href="https://github.com/Imageomics/phylo-diffusion">
         <img src="images/icons/github.svg" /> Code
       </a>
       <a class="pill-button" href="https://huggingface.co/spaces/mridulk/hier-embed">
@@ -75,26 +75,20 @@
       </a> -->
     </p>
     <figure>
-      <img srcset="" src="images/hier_embed.jpg" alt="" loading="lazy">
+      <img srcset="" src="images/phylo_diffusion_architecture.jpg" alt="" loading="lazy">
       <figcaption>
-        Figure 1: A schematic representation of our proposed approach to encode the information of a species and its position in 
-        the phylogenetic tree in the form of a HIERarchical Embedding (HIER-Embed) comprising of four encoding segments 
-        (one for each level of phylogeny), which when used to condition a latent diffusion model generates synthetic images of 
-        the species. By structuring the embedding space of species with phylogenetic knowledge, HIER-Embed enables us to 
-        visualize changes in evolutionary traits of generated images (circled pink) after perturbing certain levels of the embedding
+        Figure 1: Overview of Phylo-Diffusion framework. Every species in the tree of life (phylogenetic tree) is encoded to a 
+        HIERarchical Embedding (HIER-Embed) comprising of four vectors (one for each phylogenetic level), which is used to 
+        condition a latent diffusion model to generate synthetic images of the species. By structuring the embedding space with 
+        phylogenetic knowledge, Phylo-Diffusion enables visualization of changes in the evolutionary traits of a species 
+        (circled pink) upon perturbing its embedding.
       </figcaption>
     </figure>
 
-    <h2 class="banded">HIER-Embed</h2>
+    <h2 class="banded">Phylo-Diffusion</h2>
 
-    <!-- <p>
-      Images of the natural world are a super-abundant source of biological information.
-      There are many computational methods and tools, particularly computer vision, for extracting information from images.
-      <b>But</b>, existing methods are bespoke models for a specific task and are not adaptable
-      or extendable to new questions, contexts, and datasets.
-    </p> -->
     <p>
-      We introduce Graph as a modality to conditional Diffusion Models, HIER-Embed, for understanding in evolutionary traits in biological specimens.
+      We introduce Graph as a modality to conditional Diffusion Models, Phylo-Diffusion, for understanding in evolutionary traits in biological specimens.
       We leverage this new modality and introduce two experiments for understanding evolutionary traits inspired by gene-knockout experiments:
       <ol>
         <li><b>Trait Masking:</b> where one or more level encodings of species are masked out with noise.</li>
@@ -108,7 +102,7 @@
 
     <h2 class="banded" id="evaluation">Experiments</h2>
     <p>
-      We evaluate HIER-Embed and show that it achieves high-fidelity at par with the text-to-image and class-conditional diffusion models.
+      We evaluate Phylo-Diffusion and show that it achieves high-fidelity at par with the text-to-image and class-conditional diffusion models.
       TODO: Insert table
     </p>
 
@@ -130,7 +124,7 @@
       <img srcset="" src="images/trait_swapping1.jpg" alt="" loading="lazy">
       <figcaption>
         Figure 3: Visualization of changes in traits after swapping information at Level 2 (Node A) 
-        for <i>Noturus Exilis</i> (left) with its sibling subtree at Node B(right) to generate perturbed species (center). 
+        for <i>Noturus exilis</i> (left) with its sibling subtree at Node B(right) to generate perturbed species (center). 
         Traits shared with the source species are outlined in green, whereas those shared with the sibling subtree 
         at Node B are outlined in pink.
       </figcaption>
