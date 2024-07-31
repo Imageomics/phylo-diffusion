@@ -27,34 +27,33 @@
     <h1>Hierarchical Conditioning of Diffusion Models Using Tree-of-Life for Studying Species Evolution</h1>
     <p class="centered">
       <sup>1</sup><a href="https://mridulk97.github.io/">Mridul Khurana</a>,
-      <sup>1</sup><a href="https://scholar.google.com/citations?user=pz2Nm8AAAAAJ&hl=en">Arka Daw</a>,
+      <sup>2</sup><a href="https://scholar.google.com/citations?user=pz2Nm8AAAAAJ&hl=en">Arka Daw</a>,
       <sup>1</sup><a href="https://people.cs.vt.edu/marufm/">M. Maruf</a>,
       <sup>1</sup><a href="https://www.uyedalab.com/">Josef Uyeda</a>,
-      <sup>2</sup><a href="https://www.faculty.uci.edu/profile/?facultyId=6769">Wasila Dahdul</a>,
+      <sup>3</sup><a href="https://www.faculty.uci.edu/profile/?facultyId=6769">Wasila Dahdul</a>,
       <sup>1</sup><a href="https://scholar.google.com/citations?user=LyaJ880AAAAJ&hl=en">Caleb Charpentier</a>,
-      <sup>3</sup><a href="https://scholar.google.com/citations?user=bRO-9m8AAAAJ&hl=en">Yasin Bakış</a>,
-      <sup>3</sup><a href="https://scholar.google.com/citations?user=K4typXsAAAAJ&hl=en">Henry L. Bart Jr.</a>,
-      <sup>4</sup><a href="https://scholar.google.com/citations?user=ZKnlvcoAAAAJ&hl=en">Paula Mabee</a>,
-      <sup>5</sup><a href="https://scholars.duke.edu/person/Hilmar.Lapp">Hilmar Lapp</a>,
-      <sup>6</sup><a href="https://renci.org/staff/james-balhoff/">James Balhoff</a>,
-      <sup>7</sup><a href="https://sites.google.com/view/wei-lun-harry-chao">Wei-Lun (Harry) Chao</a>,
-      <sup>8</sup><a href="https://www.cs.rpi.edu/~stewart/">Charles Stewart</a>,
-      <sup>7</sup><a href="https://cse.osu.edu/people/berger-wolf.1">Tanya Berger-Wolf</a>,
+      <sup>4</sup><a href="https://scholar.google.com/citations?user=bRO-9m8AAAAJ&hl=en">Yasin Bakış</a>,
+      <sup>4</sup><a href="https://scholar.google.com/citations?user=K4typXsAAAAJ&hl=en">Henry L. Bart Jr.</a>,
+      <sup>5</sup><a href="https://scholar.google.com/citations?user=ZKnlvcoAAAAJ&hl=en">Paula Mabee</a>,
+      <sup>6</sup><a href="https://scholars.duke.edu/person/Hilmar.Lapp">Hilmar Lapp</a>,
+      <sup>7</sup><a href="https://renci.org/staff/james-balhoff/">James Balhoff</a>,
+      <sup>8</sup><a href="https://sites.google.com/view/wei-lun-harry-chao">Wei-Lun (Harry) Chao</a>,
+      <sup>9</sup><a href="https://www.cs.rpi.edu/~stewart/">Charles Stewart</a>,
+      <sup>8</sup><a href="https://cse.osu.edu/people/berger-wolf.1">Tanya Berger-Wolf</a>,
       <sup>1</sup><a href="https://people.cs.vt.edu/karpatne/">Anuj Karpatne</a>
     </p>
     <p class="centered">
       <sup>1</sup>Virginia Tech,
-      <sup>2</sup>University of California, Irvine,
-      <sup>3</sup>Tulane University,
-      <sup>4</sup>Battelle,
-      <sup>5</sup>Duke University,
-      <sup>6</sup>University of North Carolina at Chapel Hill,
-      <sup>7</sup>The Ohio State University,
-      <sup>8</sup>Rensselaer Polytechnic Institute
+      <sup>2</sup>Oak Ridge National Lab,
+      <sup>3</sup>University of California, Irvine,
+      <sup>4</sup>Tulane University,
+      <sup>5</sup>Battelle,
+      <sup>6</sup>Duke University,
+      <sup>7</sup>University of North Carolina at Chapel Hill,
+      <sup>8</sup>The Ohio State University,
+      <sup>9</sup>Rensselaer Polytechnic Institute
     </p>
-    <!-- <p class="text-sm centered">
-      <sup>*</sup>Sam and Lisa are co-first authors and contributed equally to BioCLIP.
-    </p> -->
+
     <p class="text-sm centered">
       <a href="mailto:mridul@vt.edu">mridul@vt.edu</a>, 
       <a href="mailto:karpatne@vt.edu">karpatne@vt.edu</a>
@@ -103,8 +102,57 @@
     <h2 class="banded" id="evaluation">Experiments</h2>
     <p>
       We evaluate Phylo-Diffusion and show that it achieves high-fidelity at par with the text-to-image and class-conditional diffusion models.
-      TODO: Insert table
     </p>
+
+    <h4>Phylo-Diffusion performs at par with state-of-the-art generative models</h4>
+    <p><i>Scroll to see all results.</i></p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Model Type</th>
+          <th>Method</th>
+          <th>FID &darr;</th>
+          <th>IS &uarr;</th>
+          <th>Prec. &uarr;</th>
+          <th>Recall &uarr;</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>GAN</td>
+          <td>Phylo-NN</td>
+          <td>28.08</td>
+          <td>2.35</td>
+          <td>0.625</td>
+          <td>0.084</td>
+        </tr>
+        <tr>
+          <td>Diffusion</td>
+          <td>Class Conditional</td>
+          <td>11.46</td>
+          <td>2.47</td>
+          <td>0.679</td>
+          <td>0.359</td>
+        </tr>
+        <tr>
+          <td>Diffusion</td>
+          <td>Scientific Name</td>
+          <td>11.76</td>
+          <td>2.43</td>
+          <td>0.683</td>
+          <td>0.332</td>
+        </tr>
+        <tr>
+          <td>Diffusion</td>
+          <td>Phylo-Diffusion (ours)</td>
+          <td>11.38</td>
+          <td>2.53</td>
+          <td>0.654</td>
+          <td>0.367</td>
+        </tr>
+      </tbody>
+      </table>
 
     <h3>Trait Masking</h3>
 
@@ -120,7 +168,6 @@
     <h3>Trait Swapping</h3>
 
     <figure>
-
       <img srcset="" src="images/trait_swapping1.jpg" alt="" loading="lazy">
       <figcaption>
         Figure 3: Visualization of changes in traits after swapping information at Level 2 (Node A) 
@@ -132,91 +179,11 @@
     
 
 
-    <!-- <p><i>Scroll to see all results.</i></p>
-    <table cellpadding="0" cellspacing="0">
-      <thead>
-        <tr>
-          <th rowspan="2" class="sticky border-right">Model</th>
-          <th colspan="4" class="no-border-bottom border-right">Animals</th>
-          <th colspan="5" class="no-border-bottom border-right">Plants & Fungi</th>
-          <th rowspan="2" class="border-right">Rare Species</th>
-          <th rowspan="2">Mean</th>
-        </tr>
-        <tr>
-          <th class="no-border-top border-left">Birds 525</th>
-          <th class="no-border-top">Plankton</th>
-          <th class="no-border-top">Insects</th>
-          <th class="no-border-top border-right">Insects 2</th>
-          <th class="no-border-top">PlantNet</th>
-          <th class="no-border-top">Fungi</th>
-          <th class="no-border-top">PlantVillage</th>
-          <th class="no-border-top">Med. Leaf</th>
-          <th class="no-border-top border-right">PlantDoc</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="sticky border-right">CLIP</td>
-          <td>49.9</td>
-          <td>3.2</td>
-          <td>9.1</td>
-          <td>9.8</td>
-          <td>58.5</td>
-          <td>10.2</td>
-          <td>5.4</td>
-          <td>15.9</td>
-          <td>26.1</td>
-          <td>26.6</td>
-          <td>21.4</td>
-        </tr>
-        <tr>
-          <td class="sticky border-right">OpenCLIP</td>
-          <td>54.7</td>
-          <td>2.2</td>
-          <td>6.5</td>
-          <td>9.6</td>
-          <td>50.2</td>
-          <td>5.7</td>
-          <td>8.0</td>
-          <td>12.4</td>
-          <td>25.8</td>
-          <td>31.0</td>
-          <td>20.6</td>
-        </tr>
-        <tr>
-          <td class="sticky border-right">BioCLIP</td>
-          <td><b>72.1</b></td>
-          <td><b>6.1</b></td>
-          <td><b>34.8</b></td>
-          <td><b>20.4</b></td>
-          <td><b>91.4</b></td>
-          <td>40.7</td>
-          <td><b>24.4</b></td>
-          <td><b>38.6</b></td>
-          <td><b>28.4</b></td>
-          <td><b>37.8</b></td>
-          <td><b>39.4</b></td>
-        </tr>
-        <tr>
-          <td class="sticky border-right">iNat21 Only</td>
-          <td>56.1</td>
-          <td>2.6</td>
-          <td>30.7</td>
-          <td>11.5</td>
-          <td>88.2</td>
-          <td><b>43.0</b></td>
-          <td>18.4</td>
-          <td>25.6</td>
-          <td>20.5</td>
-          <td>19.4</td>
-          <td>31.6</td>
-        </tr>
-      </tbody>
-    </table> -->
-
-
-
     <h2 id="comparision" class="banded">Comparision to PhyloNN</h2>
+    <figure>
+      <img srcset="" src="images/phylo_nn_compare_2.jpg" alt="" loading="lazy">
+    </figure>
+
     <!-- <p>
       Why does BioCLIP work so well?
       We conduct an intrinsic evaluation to understand the representations learned by BioCLIP.
