@@ -2,7 +2,7 @@
 This repo is the official implementation of "Hierarchical Conditioning of Diffusion Models Using Tree-of-Life for Studying Species Evolution"
 
 
-Accepted at ECCV 2024. Website coming soon !
+Accepted at ECCV 2024. [Project Page](https://imageomics.github.io/phylo-diffusion/) !
 
 ## Requirements
 A suitable [conda](https://conda.io/) environment named `hier_embed` can be created
