@@ -1,4 +1,4 @@
-name: hier_embed
+name: phylo_diffusion
 channels:
   - pytorch
   - defaults

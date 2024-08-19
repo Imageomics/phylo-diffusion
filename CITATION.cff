@@ -1,0 +1,85 @@
+abstract: "A central problem in biology is to understand how organisms evolve and adapt to their environment by acquiring variations in the observable characteristics or traits of species across the tree of life. With the growing availability of large-scale image repositories in biology and recent advances in generative modeling, there is an opportunity to accelerate the discovery of evolutionary traits automatically from images. Toward this goal, we introduce Phylo-Diffusion, a novel framework for conditioning diffusion models with phylogenetic knowledge represented in the form of HIERarchical Embeddings (HIER-Embeds). We also propose two new experiments for perturbing the embedding space of Phylo-Diffusion: trait masking and trait swapping, inspired by counterpart experiments of gene knockout and gene editing/swapping. Our work represents a novel methodological advance in generative modeling to structure the embedding space of diffusion models using tree-based knowledge. Our work also opens a new chapter of research in evolutionary biology by using generative models to visualize evolutionary changes directly from images. We empirically demonstrate the usefulness of Phylo-Diffusion in capturing meaningful trait variations for fishes and birds, revealing novel insights about the biological mechanisms of their evolution."
+authors:
+- family-names: Khurana
+  given-names: Mridul
+cff-version: 1.0.0
+date-released: "2024-07-31"
+# identifiers:
+#   - description: "The GitHub release URL of tag <version>."
+#     type: url
+#     value: "https://github.com/Imageomics/<repo>/releases/tag/<tag-name>"
+#   - description: "The GitHub URL of the commit tagged with <tag-name>."
+#     type: url
+#     value: "https://github.com/Imageomics/<repo>/tree/<commit-hash>"
+keywords:
+  - "diffusion models"
+  - "hierarchical conditioning"
+  - evolution
+  - imageomics
+  - "knowledge-guided"
+  - CV
+  - biology
+  - images
+  - multimodal
+  
+license: MIT
+message: "If you find this software helpful in your research, please cite both the software and our paper."
+repository-code: "https://github.com/Imageomics/phylo-diffusion"
+title: "Phylo-Diffusion"
+version: 1.0.0
+type: software
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Khurana
+      given-names: Mridul
+    - family-names: Daw
+      given-names: Arka 
+    - family-names: Maruf
+      given-names: "M."
+    - family-names: Uyeda
+      given-names: "Josef C."
+    - family-names: Dahdul
+      given-names: Wasila
+    - family-names: Charpentier
+      given-names: Caleb
+    - family-names: Bakış
+      given-names: "Yasin"
+    - family-names: "Bart Jr."
+      given-names: "Henry L."
+    - family-names: Mabee
+      given-names: "Paula M."
+    - family-names: Lapp
+      given-names: Hilmar
+    - family-names: Balhoff
+      given-names: "James P."
+    - family-names: Chao
+      given-names: "Wei-Lun"
+    - family-names: Stewart
+      given-names: Charles
+    - family-names: "Berger-Wolf"
+      given-names: Tanya
+    - family-names: Karpatne
+      given-names: Anuj
+
+  title: "Hierarchical Conditioning of Diffusion Models Using Tree-of-Life for Studying Species Evolution"
+  year: 2024
+  journal: arXiv
+  doi: 10.48550/arXiv.2408.00160
+references: 
+  - authors:
+      - family-names: Rombach
+        given-names: Robin
+      - family-names: Blattmann
+        given-names: Andreas
+      - family-names: Lorenz
+        given-names: Dominik
+      - family-names: Esser
+        given-names: Patrick
+      - family-names: Ommer
+        given-names: Bjorn
+    title: "High-resolution image synthesis with latent diffusion models"
+    # version:
+    type: article
+    # doi: 
+    # date-released:
