@@ -59,6 +59,8 @@
       <a href="mailto:karpatne@vt.edu">karpatne@vt.edu</a>
     </p>
 
+    <p class="centered"><strong>ECCV 2024.</strong></p>
+
     <p class="centered">
       <!-- <a class="pill-button" href="https://huggingface.co/datasets/imageomics/TreeOfLife-10M">
         <img src="images/icons/huggingface.svg" /> Data
@@ -91,10 +93,34 @@
       We introduce Graph as a modality to conditional Diffusion Models, Phylo-Diffusion, for understanding in evolutionary traits in biological specimens.
       We leverage this new modality and introduce two experiments for understanding evolutionary traits inspired by gene-knockout experiments:
       <ol>
-        <li><b>Trait Masking:</b> where one or more level encodings of species are masked out with noise.</li>
-        <li><b>Trait Swapping:</b> which involves the replacement of a specific level encoding of a reference species with that of a sibling node</li>
+        <li><b>Trait Masking:</b>  where we mask out one or more level embedding by substituting it with gaussian noise to verify that the embeddings learned capture hierarchical information.</li>
+        <li><b>Trait Swapping:</b> which involves substitution of level-l embedding of a source species with the level-l embedding of a sibling subtree at an equivalent level to visualize the trait differences in the generated images before and after trait swapping that can help us understand the evolutionary traits that branched at a certain level.</li>
       </ol>
     </p>
+
+    <figure style="text-align: center;">
+      <div style="display: flex; justify-content: space-around; align-items: flex-start;">
+        <figure style="margin: 0 10px;">
+          <img src="images/trait_masking.jpg" alt="" loading="lazy" style="max-width: 100%; height: auto;">
+          <figcaption>
+            (a) Trait Masking
+          </figcaption>
+        </figure>
+        
+        <figure style="margin: 0 10px;">
+          <img src="images/trait_swapping.jpg" alt="" loading="lazy" style="max-width: 100%; height: auto;">
+          <figcaption>
+            (b) Trait Swapping
+          </figcaption>
+        </figure>
+      </div>
+      
+      <figcaption style="margin-top: 10px;">
+        Figure 2: Schematic diagrams of the two proposed experiments for discovering evolutionary traits using Phylo-Diffusion.
+      </figcaption>
+    </figure>
+    
+    
         
     <h3>Demo</h3>
     <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/4.36.1/gradio.js"></script>
@@ -161,17 +187,30 @@
 
       <img srcset="" src="images/level3-lepomis.jpg" alt="" loading="lazy">
       <figcaption>
-        Figure 2: Probability activations for <i>Lepomis</i> species at level 3 for Trait Masking. 
+        Figure 3: Probability activations for <i>Lepomis</i> species at level 3 for Trait Masking. 
         The species highlighted in green represent the species belonging to that subtree at the given level
       </figcaption>
     </figure>
     
     <h3>Trait Swapping</h3>
 
+    Figure 4 illustrates trait swapping for the source species <i>Noturus exilis</i> (left), where the
+    information at Level-2 is swapped with that of a sibling subtree at Node B
+    (right). The image in the center is generated using the trait swapped embedding.
+    This visualization of the perturbed species helps us study the trait changes that
+    would have branched out at level-2 between Node A and Node B.In the generated
+    image (center), we observe the absence of barbels(whiskers), and the caudal fin
+    (tail) is getting forked (or split) highlighted in pink, which are traits adopted
+    from species in the subtree at B (<i>Notropis</i>). Whereas other fins like the dorsal,
+    pelvic, and anal fin still resemble the source species <i>Noturus exilis</i> highlighted
+    in green. The same is also reflected in the change of probability distribution
+    after perturbations; the probability distribution of source species <i>Noturus exilis</i>
+    decreases and the probability of it being a <i>Notropis</i> increases slightly.
+
     <figure>
-      <img srcset="" src="images/trait_swapping1.jpg" alt="" loading="lazy">
+      <img srcset="" src="images/trait_swapping_example.jpg" alt="" loading="lazy">
       <figcaption>
-        Figure 3: Visualization of changes in traits after swapping information at Level 2 (Node A) 
+        Figure 4: Visualization of changes in traits after swapping information at Level 2 (Node A) 
         for <i>Noturus exilis</i> (left) with its sibling subtree at Node B(right) to generate perturbed species (center). 
         Traits shared with the source species are outlined in green, whereas those shared with the sibling subtree 
         at Node B are outlined in pink.
@@ -181,8 +220,13 @@
 
 
     <h2 id="comparision" class="banded">Comparision to PhyloNN</h2>
+
+
     <figure>
       <img srcset="" src="images/phylo_nn_compare_2.jpg" alt="" loading="lazy">
+      <figcaption>
+        Figure 5: Comparing Phylo-NN with Phylo-Diffusion for trait swapping
+      </figcaption>
     </figure>
 
     <!-- <p>
@@ -214,14 +258,19 @@
       We train BioCLIP on TreeOfLife-10M and release the weights for public use.
     </p> -->
 
-    <!-- <h2>Reference</h2>
+
+
+    <h2 class="banded">References</h2>
     <p>Please cite our paper if you use our code, data, model or results.</p>
-    <pre class="reference">@inproceedings{stevens2024bioclip,
-      title = {Hier}, 
-      author = {},
-      booktitle={},
-      year = {2024}
-    }</pre>
+    <pre class="reference">
+      @article{khurana2024hierarchical,
+        title={Hierarchical Conditioning of Diffusion Models Using Tree-of-Life for Studying Species Evolution},
+        author={Khurana, Mridul and Daw, Arka and Maruf, M and Uyeda, Josef C and Dahdul, Wasila and Charpentier, Caleb and Bak{\i}{\c{s}}, Yasin and Bart Jr, Henry L and Mabee, Paula M and Lapp, Hilmar and others},
+        journal={arXiv preprint arXiv:2408.00160},
+        year={2024}
+      }
+    </pre>
+
     <p>Also consider citing LDM:</p>
     <pre class="reference">@inproceedings{rombach2022high,
       title={High-resolution image synthesis with latent diffusion models},
@@ -229,7 +278,8 @@
       booktitle={Proceedings of the IEEE/CVF conference on computer vision and pattern recognition},
       pages={10684--10695},
       year={2022}
-    }</pre> -->
+    }</pre>
+
 
     <h2 class="banded">Acknowledgements</h2>
     <p>
