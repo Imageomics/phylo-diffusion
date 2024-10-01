@@ -19,7 +19,9 @@
       <details>
         <summary>More Research</summary>
         <div class="options">
+          <p><a href="https://arxiv.org/abs/2408.16176">VLM4Bio</a></p>
           <p><a href="https://imageomics.github.io/bioclip/">BioCLIP</a></p>
+          <p><a href="https://arxiv.org/abs/2407.08027">FishVista</a></p>
           <p><a href="https://github.com/Imageomics/INTR">INTR</a></p>
         </div>
       </details>
@@ -88,6 +90,11 @@
       </figcaption>
     </figure>
 
+    <h2 class="banded">Abstract</h2>
+    <p>
+      A central problem in biology is to understand how organisms evolve and adapt to their environment by acquiring variations in the observable characteristics or traits of species across the tree of life. With the growing availability of large-scale image repositories in biology and recent advances in generative modeling, there is an opportunity to accelerate the discovery of evolutionary traits automatically from images. Toward this goal, we introduce Phylo-Diffusion, a novel framework for conditioning diffusion models with phylogenetic knowledge represented in the form of HIERarchical Embeddings (HIER-Embeds). We also propose two new experiments for perturbing the embedding space of Phylo-Diffusion: trait masking and trait swapping, inspired by counterpart experiments of gene knockout and gene editing/swapping. Our work represents a novel methodological advance in generative modeling to structure the embedding space of diffusion models using tree-based knowledge. Our work also opens a new chapter of research in evolutionary biology by using generative models to visualize evolutionary changes directly from images. We empirically demonstrate the usefulness of Phylo-Diffusion in capturing meaningful trait variations for fishes and birds, revealing novel insights about the biological mechanisms of their evolution.
+    </p>
+
     <h2 class="banded">Phylo-Diffusion</h2>
 
     <p>
@@ -125,7 +132,7 @@
         
     <h3>Demo</h3>
     <p>Please note that the demo is currently running on free CPU resources provided by Hugging Face, so it may take up to 10 minutes to generate an image. We're working on securing additional resources to speed up the process. Thank you for your patience! </p>
-    <iframe src="https://223dc0959d1d53607b.gradio.live/" width="100%" height="800" frameborder="0"></iframe>
+    <iframe src="https://223dc0959d1d53607b.gradio.live/" width="130%" height="1200" frameborder="0"></iframe>
 <!--     <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/4.36.1/gradio.js"></script>
     <gradio-app src="https://mridulk-hier-embed.hf.space/"></gradio-app> -->
 
