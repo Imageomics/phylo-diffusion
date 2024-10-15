@@ -21,6 +21,9 @@ python main.py --name <mddel_name> --logdir <path_to_logdir> --base <yaml_config
 
 We first need to train the base autoencoder model. This can be trained using the following command:
 
+### Dataset
+Please find the Fish Dataset at [link](https://drive.google.com/drive/folders/1W6tB8m8Gqv7SAOcwCMwTnWK9rB5voNHU?usp=sharing)
+
 ## Sampling Images
 
 ```
