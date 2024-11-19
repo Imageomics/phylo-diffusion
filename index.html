@@ -92,7 +92,7 @@
 
     <h2 class="banded">Abstract</h2>
     <p>
-      A central problem in biology is to understand how organisms evolve and adapt to their environment by acquiring variations in the observable characteristics or traits of species across the tree of life. With the growing availability of large-scale image repositories in biology and recent advances in generative modeling, there is an opportunity to accelerate the discovery of evolutionary traits automatically from images. Toward this goal, we introduce Phylo-Diffusion, a novel framework for conditioning diffusion models with phylogenetic knowledge represented in the form of HIERarchical Embeddings (HIER-Embeds). We also propose two new experiments for perturbing the embedding space of Phylo-Diffusion: trait masking and trait swapping, inspired by counterpart experiments of gene knockout and gene editing/swapping. Our work represents a novel methodological advance in generative modeling to structure the embedding space of diffusion models using tree-based knowledge. Our work also opens a new chapter of research in evolutionary biology by using generative models to visualize evolutionary changes directly from images. We empirically demonstrate the usefulness of Phylo-Diffusion in capturing meaningful trait variations for fishes and birds, revealing novel insights about the biological mechanisms of their evolution.
+      A central problem in biology is understanding how organisms evolve and adapt to their environment by acquiring variations in the observable characteristics or traits of species across the tree of life. With the growing availability of large-scale image repositories in biology and recent advances in generative modeling, there is an opportunity to accelerate the discovery of evolutionary traits automatically from images. Toward this goal, we introduce Phylo-Diffusion, a novel framework for conditioning diffusion models with phylogenetic knowledge represented in the form of HIERarchical Embeddings (HIER-Embeds). We also propose two new experiments for perturbing the embedding space of Phylo-Diffusion: trait masking and trait swapping, inspired by counterpart experiments of gene knockout and gene editing/swapping. Our work represents a novel methodological advance in generative modeling to structure the embedding space of diffusion models using tree-based knowledge. Our work also opens a new chapter of research in evolutionary biology by using generative models to visualize evolutionary changes directly from images. We empirically demonstrate the usefulness of Phylo-Diffusion in capturing meaningful trait variations for fishes and birds, revealing novel insights about the biological mechanisms of their evolution.
     </p>
 
     <h2 class="banded">Phylo-Diffusion</h2>
@@ -101,7 +101,7 @@
       We introduce Graph as a modality to conditional Diffusion Models, Phylo-Diffusion, for understanding in evolutionary traits in biological specimens.
       We leverage this new modality and introduce two experiments for understanding evolutionary traits inspired by gene-knockout experiments:
       <ol>
-        <li><b>Trait Masking:</b>  where we mask out one or more level embedding by substituting it with gaussian noise to verify that the embeddings learned capture hierarchical information.</li>
+        <li><b>Trait Masking:</b>  where we mask out one or more level embedding by substituting it with gaussian noise to verify that the embeddings learned to capture hierarchical information.</li>
         <li><b>Trait Swapping:</b> which involves the substitution of level-l embedding of a source species with the level-l embedding of a sibling subtree at an equivalent level to visualize the trait differences in the generated images before and after trait swapping that can help us understand the evolutionary traits that branched at a certain level.</li>
       </ol>
     </p>
@@ -138,7 +138,7 @@
 
     <h2 class="banded" id="evaluation">Experiments</h2>
     <p>
-      We evaluate Phylo-Diffusion and show that it achieves high-fidelity at par with the text-to-image and class-conditional diffusion models.
+      We evaluate Phylo-Diffusion and show it achieves high-fidelity at par with the text-to-image and class-conditional diffusion models.
     </p>
 
     <h4>Phylo-Diffusion performs at par with state-of-the-art generative models</h4>
