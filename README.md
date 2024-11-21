@@ -1,8 +1,8 @@
 # Hierarchical Conditioning of Diffusion Models Using Tree-of-Life for Studying Species Evolution (ECCV 2024)
 This repo is the official implementation of "Hierarchical Conditioning of Diffusion Models Using Tree-of-Life for Studying Species Evolution"
 
-
-Accepted at ECCV 2024. [Project Page](https://imageomics.github.io/phylo-diffusion/) !
+[Paper](https://arxiv.org/abs/2408.00160v1) | [Project Page](https://imageomics.github.io/phylo-diffusion/) | [Demo](https://huggingface.co/spaces/mridulk/phylo-diffusion)
+---
 
 ## Requirements
 A suitable [conda](https://conda.io/) environment named `phylo_diffusion` can be created
@@ -43,7 +43,7 @@ Our paper:
 ```
 
 ### Acknowledgments
-The code base is borrowed from the original implementation of Latent Diffusion Models [1] available at [https://github.com/CompVis/latent-diffusion](https://github.com/CompVis/latent-diffusion). Also consider citing LDM.
+The code base is borrowed from the original implementation of Latent Diffusion Models [1] available at [LDM code](https://github.com/CompVis/latent-diffusion). Please consider citing LDM as well.
 
 ### References
 
