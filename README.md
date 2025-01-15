@@ -19,10 +19,14 @@ For training the models, we can use the following command:
 python main.py --name <mddel_name> --logdir <path_to_logdir> --base <yaml_config_path> --postfix <file_postfix_name> -t True --gpus <comma-separated GPU indices>
 ```
 
-We first need to train the base autoencoder model. This can be trained using the following command:
+We first need to train the base autoencoder model. 
+<!-- This can be trained using the following command: -->
 
 ### Dataset
 Please find the Fish Dataset at [link](https://drive.google.com/drive/folders/1W6tB8m8Gqv7SAOcwCMwTnWK9rB5voNHU?usp=sharing)
+
+### Trained Models and related files
+Please find the trained models at [link](https://huggingface.co/spaces/mridulk/phylo-diffusion/tree/main/model_files)
 
 ## Sampling Images
 
