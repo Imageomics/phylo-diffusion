@@ -35,14 +35,15 @@ python scripts/trait_masking.py --config_path <path_to_config_file> --ckpt_path 
 ```
 
 ## Citation
-Our paper:
 
 ```
-@article{khurana2024hierarchical,
+@inproceedings{khurana2024hierarchical,
   title={Hierarchical Conditioning of Diffusion Models Using Tree-of-Life for Studying Species Evolution},
   author={Khurana, Mridul and Daw, Arka and Maruf, M and Uyeda, Josef C and Dahdul, Wasila and Charpentier, Caleb and Bak{\i}{\c{s}}, Yasin and Bart Jr, Henry L and Mabee, Paula M and Lapp, Hilmar and others},
-  journal={arXiv preprint arXiv:2408.00160},
-  year={2024}
+  booktitle={European Conference on Computer Vision},
+  pages={137--153},
+  year={2024},
+  organization={Springer}
 }
 ```
 
